@@ -20,7 +20,11 @@ class App extends Component {
    };
    checkNewContact = newContact => {
       if (
-         this.state.contacts.find(contact => contact.name === newContact.name)
+         this.state.contacts.find(
+            contact =>
+               contact.name.toLocaleLowerCase() ===
+               newContact.name.toLocaleLowerCase()
+         )
       ) {
          alert(newContact.name + ' is alredy in contacts');
          return true;
